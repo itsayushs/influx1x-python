@@ -55,7 +55,7 @@ def insert_radiation_data(location):
 
 counter=0
 location="entrance1"
-while counter < 10:
+while counter < 20:
     insert_gama_data(location)
     insert_surface_data(location)
     insert_aerosol_data(location)
