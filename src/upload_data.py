@@ -32,30 +32,30 @@ def insert_gama_data(location):
     ingest_data("gamma", point)
 
 def insert_surface_data(location):
-    data = round(random.uniform(1,5), 3)
+    data = round(random.uniform(1,10), 3)
     point = Point("surface").tag("location", location).field("doseRate", data).time(datetime.utcnow(), WritePrecision.NS)
     ingest_data("surface", point)
 
 def insert_aerosol_data(location):
-    data = round(random.uniform(1,5), 3)
-    data2 = round(random.uniform(1,5), 3)
+    data = round(random.uniform(1,10), 3)
+    data2 = round(random.uniform(1,10), 3)
     point = Point("aerosol").tag("location", location).field("alpha", data).field("beta",data2).time(datetime.utcnow(), WritePrecision.NS)
     ingest_data("aerosol", point)
 
 def insert_swipe_data(location):
-    data = round(random.uniform(1,5), 3)
-    data2 = round(random.uniform(1,5), 3)
+    data = round(random.uniform(5,15), 3)
+    data2 = round(random.uniform(5,15), 3)
     point = Point("swipe").tag("location", location).field("alpha", data).field("beta",data2).time(datetime.utcnow(), WritePrecision.NS)
     ingest_data("swipe", point)
 
 def insert_radiation_data(location):
-    data = round(random.uniform(1,5), 3)
+    data = round(random.uniform(1,10), 3)
     point = Point("radiation").tag("location", location).field("value", data).time(datetime.utcnow(), WritePrecision.NS)
     ingest_data("radiation", point)
 
 counter=0
-location="entrance1"
-while counter < 20:
+location="entrance2"
+while counter < 8:
     insert_gama_data(location)
     insert_surface_data(location)
     insert_aerosol_data(location)
